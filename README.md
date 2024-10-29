@@ -1,27 +1,47 @@
-# Next.js + Playwright
+# Marcel Recruitment Task
 
-This example shows how to configure Playwright to work with Next.js.
+## General concept
 
-## Deploy your own
+The application was built based on following instructions:
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-playwright)
+> Imagine a gigantic laboratory network with many buildings in many locations, numerous rooms, lab
+> workers, equipment, storage compartments, etc.
+> Your job is to create an application where users will be able to track the placement of test samples.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-playwright&project-name=with-playwright&repository-name=with-playwright)
+In response a simple two screens application was created. A landing page with a search input to search for test samples and a screen with test sample location details. The UI is pretty self explanatory.
 
-## How to use
+Application was quickly bootstraped using Next.js for routing and rendering. Libraries "shadcn/ui" and "Tailwind" were used to quickly prototype an usable UI.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Application uses mocked data, served by two internal endpoints, but can be quickly refactored to use real data eg. from an external API.
 
-```bash
-npx create-next-app --example with-playwright with-playwright-app
-```
+Few sample E2E tests were written using Playwright to test core functionalities of searching test samples and viewieng their location details.
 
-```bash
-yarn create next-app --example with-playwright with-playwright-app
-```
+## Setup
 
-```bash
-pnpm create next-app --example with-playwright with-playwright-app
-```
+### Prerequisites
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Nodejs and NPM is required to install dependencies, run the application and tests. LTS version is recommended.
+
+### Installing dependencies
+
+Run `npm install` command in the root directory of the project (where `package-lock.json` file is located) to install necessary dependencies.
+
+## Running the application
+
+### Development mode
+
+You can use `npm run dev` command to run the application in dev mode. It will be available at `http://localhost:3000`.
+
+### Building and running in production mode
+
+You can build the application using `npm run build` command. This will generate build artifacts in the `./.next` directory. You can then use the `npm run start` command to run the application in production mode. It will be available at `http://localhost:3000`.
+
+## Testing
+
+### Prequisites
+
+Run `npx playwright install` command in the root directory of the project to install necessary dependencies for testing.
+
+### Running E2E test
+
+Use the `npm run test:e2e` command to run all E2E tests.
