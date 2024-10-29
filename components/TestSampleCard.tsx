@@ -60,7 +60,7 @@ export function TestSampleCard({ sample, ...rest }: Props) {
             <Skeleton className="h-[1em] my-1 w-3/5" />
           )}
         </p>
-        <p className="text-sm">
+        <p className="text-sm text-muted-foreground mt-2">
           {sample ? (
             sample.location.details
           ) : (

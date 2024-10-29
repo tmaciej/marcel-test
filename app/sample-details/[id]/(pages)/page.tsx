@@ -99,7 +99,9 @@ export default async function SampleDetailsPage({ params }: Props) {
             {sample.location.laboratory.name}
           </p>
           <p className="text-sm">{sample.location.laboratory.address}</p>
-          <p className="text-sm">{sample.location.details}</p>
+          <p className="text-sm text-muted-foreground mt-2">
+            {sample.location.details}
+          </p>
         </CardContent>
 
         <CardFooter className="flex justify-end">
